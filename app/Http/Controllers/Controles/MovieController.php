@@ -7,6 +7,7 @@ use App\Models\Movie;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Auth;
 
 class MovieController extends Controller
 {
@@ -53,6 +54,9 @@ class MovieController extends Controller
 
     public function store(Request $request)
     {
+        if (Auth::guest()) {
+            return redirect("login");
+        }
         $validator = Validator::make($request->all(), [
             'title' => 'required|string|max:255',
             'genre' => 'required|string|max:255',
