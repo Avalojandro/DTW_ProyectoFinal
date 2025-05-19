@@ -47,7 +47,7 @@ Route::prefix('peliculas')->group(function () {
 Route::middleware(['auth'])->group(function () {
 
     // Panel de control principal
-    Route::get('/panel', [ControlController::class, 'indexRedireccionamiento'])->name('admin.panel');
+    //Route::get('/panel', [ControlController::class, 'indexRedireccionamiento'])->name('admin.panel');
 
     // Dashboard administrativo
     Route::get('/admin/dashboard', [DashboardController::class, 'vistaDashboard'])->name('admin.dashboard.index');
