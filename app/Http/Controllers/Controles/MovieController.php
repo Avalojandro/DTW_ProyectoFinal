@@ -46,6 +46,11 @@ class MovieController extends Controller
 
     public function create()
     {
+        $this->authorize('agregar-pelicula');
+        if (Auth::guest()) {
+            return redirect("login");
+        }
+
         return view('backend.movies.create', [
             'genres' => Movie::genres(),
             'statusOptions' => $this->getStatusOptions()
