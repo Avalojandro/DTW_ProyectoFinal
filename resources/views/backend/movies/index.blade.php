@@ -9,9 +9,11 @@
             <a href="{{ route('welcome') }}" class="btn btn-outline-secondary">
                 <i class="bi bi-house-door me-1"></i> Volver al Inicio
             </a>
+            @can('agregar-pelicula')
             <a href="{{ route('movies.create') }}" class="btn btn-primary">
                 <i class="bi bi-plus-circle me-1"></i> Nueva Película
             </a>
+            @endcan
         </div>
     </div>
 
@@ -114,6 +116,7 @@
                             <a href="{{ route('movies.show', $movie) }}" class="btn btn-sm btn-outline-primary">
                                 <i class="bi bi-eye"></i> Ver
                             </a>
+                            @can('agregar-pelicula')
                             <a href="{{ route('movies.edit', $movie) }}" class="btn btn-sm btn-outline-secondary">
                                 <i class="bi bi-pencil"></i> Editar
                             </a>
@@ -124,6 +127,7 @@
                                     <i class="bi bi-trash"></i> Eliminar
                                 </button>
                             </form>
+                            @endcan
                         </div>
                     </div>
                 </div>

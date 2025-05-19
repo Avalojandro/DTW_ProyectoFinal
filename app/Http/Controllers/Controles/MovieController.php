@@ -7,6 +7,7 @@ use App\Models\Movie;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Auth;
 
 class MovieController extends Controller
 {
@@ -45,6 +46,11 @@ class MovieController extends Controller
 
     public function create()
     {
+        $this->authorize('agregar-pelicula');
+        if (Auth::guest()) {
+            return redirect("login");
+        }
+
         return view('backend.movies.create', [
             'genres' => Movie::genres(),
             'statusOptions' => $this->getStatusOptions()
@@ -53,6 +59,10 @@ class MovieController extends Controller
 
     public function store(Request $request)
     {
+        $this->authorize('agregar-pelicula');
+        if (Auth::guest()) {
+            return redirect("login");
+        }
         $validator = Validator::make($request->all(), [
             'title' => 'required|string|max:255',
             'genre' => 'required|string|max:255',
@@ -107,6 +117,7 @@ class MovieController extends Controller
 
     public function edit($id)
     {
+        $this->authorize('agregar-pelicula');
         try {
             $movie = Movie::findOrFail($id);
 
@@ -124,6 +135,7 @@ class MovieController extends Controller
 
     public function update(Request $request, $id)
     {
+        $this->authorize('agregar-pelicula');
         try {
             $movie = Movie::findOrFail($id);
 
@@ -183,6 +195,7 @@ class MovieController extends Controller
 
     public function destroy($id)
     {
+        $this->authorize('agregar-pelicula');
         try {
             $movie = Movie::findOrFail($id);
 

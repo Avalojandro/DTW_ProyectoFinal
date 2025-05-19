@@ -27,9 +27,11 @@
             </nav>
         </div>
         <div class="d-flex gap-2">
+            @can('agregar-pelicula')
             <a href="{{ route('movies.edit', $movie->id) }}" class="btn btn-primary">
                 <i class="bi bi-pencil me-1"></i> Editar
             </a>
+            @endcan
             <form action="{{ route('movies.destroy', $movie->id) }}" method="POST" class="d-inline">
                 @csrf
                 @method('DELETE')

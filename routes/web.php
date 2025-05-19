@@ -32,22 +32,27 @@ Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::post('/admin/login', [LoginController::class, 'login']);
 Route::post('/admin/logout', [LoginController::class, 'logout'])->name('admin.logout');
 
+//ruta de logout arreglada
+Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
+
 // PRUEBA: Sacamos temporalmente las rutas de películas del grupo auth para diagnóstico
-Route::prefix('peliculas')->group(function () {
-    Route::get('/', [MovieController::class, 'index'])->name('movies.index');
-    Route::get('/crear', [MovieController::class, 'create'])->name('movies.create');
-    Route::post('/', [MovieController::class, 'store'])->name('movies.store');
-    Route::get('/{id}', [MovieController::class, 'show'])->name('movies.show');
-    Route::get('/{id}/editar', [MovieController::class, 'edit'])->name('movies.edit');
-    Route::put('/{id}', [MovieController::class, 'update'])->name('movies.update');
-    Route::delete('/{id}', [MovieController::class, 'destroy'])->name('movies.destroy');
-});
 
 // Rutas protegidas (requieren autenticación) - Resto de rutas administrativas
 Route::middleware(['auth'])->group(function () {
 
     // Panel de control principal
-    Route::get('/panel', [ControlController::class, 'indexRedireccionamiento'])->name('admin.panel');
+    //Route::get('/panel', [ControlController::class, 'indexRedireccionamiento'])->name('admin.panel');
+
+    Route::prefix('peliculas')->group(function () {
+        Route::get('/', [MovieController::class, 'index'])->name('movies.index');
+        Route::get('/crear', [MovieController::class, 'create'])->name('movies.create');
+        Route::post('/', [MovieController::class, 'store'])->name('movies.store');
+        Route::get('/{id}', [MovieController::class, 'show'])->name('movies.show');
+        Route::get('/{id}/editar', [MovieController::class, 'edit'])->name('movies.edit');
+        Route::put('/{id}', [MovieController::class, 'update'])->name('movies.update');
+        Route::delete('/{id}', [MovieController::class, 'destroy'])->name('movies.destroy');
+    });
+
 
     // Dashboard administrativo
     Route::get('/admin/dashboard', [DashboardController::class, 'vistaDashboard'])->name('admin.dashboard.index');

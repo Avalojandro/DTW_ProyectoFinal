@@ -43,11 +43,13 @@
                         <i class="bi bi-film me-2"></i> Películas
                     </a>
                 </li>
+                @can('agregar-pelicula')
                 <li class="nav-item">
                     <a class="nav-link text-white {{ request()->routeIs('movies.create') ? 'active' : '' }}" href="{{ route('movies.create') }}">
                         <i class="bi bi-plus-circle me-2"></i> Nueva Película
                     </a>
                 </li>
+                @endcan
             </ul>
         </div>
 
