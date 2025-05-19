@@ -59,6 +59,7 @@ class MovieController extends Controller
 
     public function store(Request $request)
     {
+        $this->authorize('agregar-pelicula');
         if (Auth::guest()) {
             return redirect("login");
         }
@@ -116,6 +117,7 @@ class MovieController extends Controller
 
     public function edit($id)
     {
+        $this->authorize('agregar-pelicula');
         try {
             $movie = Movie::findOrFail($id);
 
@@ -133,6 +135,7 @@ class MovieController extends Controller
 
     public function update(Request $request, $id)
     {
+        $this->authorize('agregar-pelicula');
         try {
             $movie = Movie::findOrFail($id);
 
@@ -192,6 +195,7 @@ class MovieController extends Controller
 
     public function destroy($id)
     {
+        $this->authorize('agregar-pelicula');
         try {
             $movie = Movie::findOrFail($id);
 
