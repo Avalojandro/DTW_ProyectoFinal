@@ -32,6 +32,9 @@ Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::post('/admin/login', [LoginController::class, 'login']);
 Route::post('/admin/logout', [LoginController::class, 'logout'])->name('admin.logout');
 
+//ruta de logout arreglada
+Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
+
 // PRUEBA: Sacamos temporalmente las rutas de películas del grupo auth para diagnóstico
 Route::prefix('peliculas')->group(function () {
     Route::get('/', [MovieController::class, 'index'])->name('movies.index');

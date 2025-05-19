@@ -263,6 +263,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
+
                         <a class="nav-link {{ request()->routeIs('movies.create') ? 'active' : '' }}"
                            href="{{ route('movies.create') }}">
                             <i class="bi bi-plus-circle me-1"></i> Nueva Película

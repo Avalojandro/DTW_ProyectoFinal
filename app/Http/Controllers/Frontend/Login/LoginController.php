@@ -36,7 +36,7 @@ class LoginController extends Controller
 
         // si ya habia iniciado sesión, redireccionar
         if (Auth::check()) {
-            return ['success'=> 1, 'ruta'=> route('admin.panel')];
+            return ['success'=> 1, 'ruta'=> route('movies.index')];
         }
 
         if($info = Usuario::where('usuario', $request->usuario)->first()){
@@ -47,7 +47,7 @@ class LoginController extends Controller
 
             if(Auth::attempt(['usuario' => $request->usuario, 'password' => $request->password])) {
 
-                return ['success'=> 1, 'ruta'=> route('admin.panel')];
+                return ['success'=> 1, 'ruta'=> route('movies.index')];
             }else{
                 return ['success' => 2]; // password incorrecta
             }
@@ -59,6 +59,6 @@ class LoginController extends Controller
     // cerrar sesión
     public function logout(Request $request){
         Auth::logout();
-        return redirect('/');
+        return redirect('/login');
     }
 }
