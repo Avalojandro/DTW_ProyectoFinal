@@ -16,9 +16,11 @@
             <a href="{{ route('movies.index') }}" class="btn btn-primary btn-lg px-4">
                 <i class="bi bi-film me-2"></i> Explorar Catálogo
             </a>
+            @can('agregar-peliculas')
             <a href="{{ route('movies.create') }}" class="btn btn-outline-light btn-lg px-4">
                 <i class="bi bi-plus-circle me-2"></i> Agregar Película
             </a>
+            @endcan
         </div>
     </div>
 </div>

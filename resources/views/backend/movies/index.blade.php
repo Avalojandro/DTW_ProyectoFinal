@@ -9,9 +9,11 @@
             <a href="{{ route('welcome') }}" class="btn btn-outline-secondary">
                 <i class="bi bi-house-door me-1"></i> Volver al Inicio
             </a>
+            @can('agregar-pelicula')
             <a href="{{ route('movies.create') }}" class="btn btn-primary">
                 <i class="bi bi-plus-circle me-1"></i> Nueva Película
             </a>
+            @endcan
         </div>
     </div>
 

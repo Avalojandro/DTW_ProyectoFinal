@@ -262,6 +262,7 @@
                             <i class="bi bi-film me-1"></i> Películas
                         </a>
                     </li>
+                    @can('agregar-pelicula')
                     <li class="nav-item">
 
                         <a class="nav-link {{ request()->routeIs('movies.create') ? 'active' : '' }}"
@@ -269,6 +270,7 @@
                             <i class="bi bi-plus-circle me-1"></i> Nueva Película
                         </a>
                     </li>
+                    @endcan
                 </ul>
 
                 <form class="d-flex ms-auto" action="{{ route('movies.index') }}" method="GET">
@@ -318,7 +320,9 @@
                     <h5>Enlaces</h5>
                     <ul class="list-unstyled">
                         <li><a href="{{ route('movies.index') }}" class="text-white">Películas</a></li>
+                        @can('agregar-pelicula')
                         <li><a href="{{ route('movies.create') }}" class="text-white">Agregar Película</a></li>
+                        @endcan
                     </ul>
                 </div>
                 <div class="col-md-3">
