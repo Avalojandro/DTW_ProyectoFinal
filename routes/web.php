@@ -35,7 +35,6 @@ Route::post('/admin/logout', [LoginController::class, 'logout'])->name('admin.lo
 //ruta de logout arreglada
 Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 
-// PRUEBA: Sacamos temporalmente las rutas de películas del grupo auth para diagnóstico
 
 // Rutas protegidas (requieren autenticación) - Resto de rutas administrativas
 Route::middleware(['auth'])->group(function () {
