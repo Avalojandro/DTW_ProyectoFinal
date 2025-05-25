@@ -3,11 +3,6 @@
 @section('title', 'Bienvenido a CineCatálogo')
 @section('content')
 
-<!-- Cortinillas y luces de teatro -->
-<div class="cinema-curtain left-curtain"></div>
-<div class="cinema-curtain right-curtain"></div>
-<div class="theater-spotlights"></div>
-
 <div class="welcome-hero">
     <div class="container text-center py-5">
         <h1 class="display-3 fw-bold mb-4">Bienvenido a CineCatálogo</h1>

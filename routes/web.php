@@ -11,17 +11,6 @@ use App\Http\Controllers\Backend\Registro\RegistroController;
 use App\Http\Controllers\Backend\Dashboard\DashboardController;
 use App\Http\Controllers\Controles\MovieController;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Aquí es donde puedes registrar las rutas web para tu aplicación.
-| Estas rutas son cargadas por el RouteServiceProvider dentro de un grupo
-| que contiene el middleware "web".
-|
-*/
-
 // Ruta de bienvenida/página principal
 Route::get('/', function () {
     return view('welcome');
@@ -34,8 +23,6 @@ Route::post('/admin/logout', [LoginController::class, 'logout'])->name('admin.lo
 
 //ruta de logout arreglada
 Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
-
-// PRUEBA: Sacamos temporalmente las rutas de películas del grupo auth para diagnóstico
 
 // Rutas protegidas (requieren autenticación) - Resto de rutas administrativas
 Route::middleware(['auth'])->group(function () {

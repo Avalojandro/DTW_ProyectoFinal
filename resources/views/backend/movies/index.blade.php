@@ -53,9 +53,7 @@
                         <button type="submit" class="btn btn-primary w-100">
                             <i class="bi bi-funnel"></i> Filtrar
                         </button>
-                        <a href="{{ route('movies.index') }}" class="btn btn-outline-secondary" title="Limpiar filtros">
-                            <i class="bi bi-x-circle"></i>
-                        </a>
+                        <a href="{{ route('movies.index') }}" id="btnLimpiarFiltros" class="btn btn-outline-secondary" title="Limpiar filtros"><i class="bi bi-x-circle"></i></a>
                     </div>
                 </div>
             </form>
@@ -182,4 +180,35 @@
         text-overflow: ellipsis;
     }
 </style>
+
+<!-- Implementación de sessionStorage -->
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const formulario = document.getElementById('filterForm');
+
+    formulario.addEventListener('change', () => {
+        const datos = new FormData(formulario);
+        sessionStorage.setItem('filtrosPeliculas', JSON.stringify({
+            search: datos.get('search'),
+            genre: datos.get('genre'),
+            status: datos.get('status')
+        }));
+    });
+
+    const filtros = JSON.parse(sessionStorage.getItem('filtrosPeliculas'));
+    if (filtros) {
+        document.querySelector('input[name="search"]').value = filtros.search || '';
+        document.querySelector('select[name="genre"]').value = filtros.genre || '';
+        document.querySelector('select[name="status"]').value = filtros.status || '';
+    }
+
+    const btnLimpiar = document.getElementById('btnLimpiarFiltros');
+    if (btnLimpiar) {
+        btnLimpiar.addEventListener('click', () => {
+            sessionStorage.removeItem('filtrosPeliculas');
+        });
+    }
+});
+</script>
+
 @endsection

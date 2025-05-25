@@ -2,13 +2,13 @@
 <html lang="es">
 
 <head>
-    <title>Panel</title>
+    <title>Inicio</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="{{ asset('css/login/bootstrap.min.css') }}">
 
-    <!-- icono del sistema -->
-    <link href="{{ asset('images/icono-sistemalogo.png') }}" rel="icon">
+    
+    <link href="{{ asset('images/fav-icon-cine-catalogo.png') }}" rel="icon">
     <!-- libreria -->
     <link href="{{ asset('plugins/fontawesome-free/css/all.min.css') }}" type="text/css" rel="stylesheet" />
 
@@ -26,7 +26,11 @@
         }
         body {
             font-family: 'Roboto', sans-serif;
-            background-image: url({{ asset('images/fondo3.jpg') }});
+            background-image: url({{ asset('images/fondo-cine.jpg') }});
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
         }
 
         .demo-container {
@@ -75,17 +79,20 @@
 
                         <div class="p-5 bg-white rounded shadow-lg">
                             <div class="text-center image-size-small position-relative">
-                                <img src="{{ asset('images/logo.png') }}" class=" p-2">
+                                <img src="{{ asset('images/logo-cine-catalogo.png') }}" class="p-2 rounded-circle">
                             </div>
                             <h3 class="mb-2 text-center pt-5"><strong>&nbsp;</strong></h3>
-                            <p class="text-center lead" style="font-weight: bold">BASE</p>
+                            <p class="text-center lead" style="font-weight: bold">INICIAR SESIÓN</p>
                             <form>
                                 <label style="margin-top: 10px" class="font-500">Usuario</label>
                                 <input class="form-control form-control-lg mb-3" id="usuario" autocomplete="off" type="text">
                                 <label class="font-500">Contraseña</label>
                                 <input class="form-control form-control-lg" id="password" type="password">
-
-                                <input type="button" value="ACCEDER" style="margin-top: 25px; width: 100%; font-weight: bold" onclick="login()" class="button button-uppercase button-primary button-pill">
+                                <div class="form-check mt-3">
+                                    <input class="form-check-input" type="checkbox" id="recordarUsuario">
+                                    <label class="form-check-label" for="recordarUsuario">Recordar usuario</label>
+                                </div>
+                                <input type="button" value="ACCEDER" style="margin-top: 25px; width: 100%; font-weight: bold" onclick="login()" class="btn btn-dark btn-lg">
                             </form>
                         </div>
                     </div>
@@ -113,11 +120,21 @@
         }
     });
 
+    // Implementación localStorage
+    document.addEventListener('DOMContentLoaded', function() {
+    const usuarioGuardado = localStorage.getItem('usuarioRecordado');
+    if(usuarioGuardado) {
+        document.getElementById('usuario').value = usuarioGuardado;
+        document.getElementById('recordarUsuario').checked = true;
+    }
+    });
+
     // inicio de sesion
     function login() {
 
         var usuario = document.getElementById('usuario').value;
         var password = document.getElementById('password').value;
+        var recordarUsuario = document.getElementById('recordarUsuario').checked;
 
         if(usuario === ''){
             toastr.error('Usuario es requerido');
@@ -127,6 +144,12 @@
         if(password === ''){
             toastr.error('Contraseña es requerida');
             return;
+        }
+
+        if(recordarUsuario) {
+            localStorage.setItem('usuarioRecordado', usuario);
+        } else {
+            localStorage.removeItem('usuarioRecordado');
         }
 
         openLoading();
