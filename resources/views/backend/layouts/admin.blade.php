@@ -7,7 +7,7 @@
     <title>@yield('title', 'Panel de Administración')</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
-    <link href="{{ asset('images/fav-icon-cine-catalogo.png') }}" rel="icon">
+    <link href="{{ asset('images/fav-icon-cine-catalogo.ico') }}" rel="icon" type="image/x-icon">
     @stack('styles')
     <style>
         body {
@@ -44,9 +44,9 @@
     <div class="d-flex">
         <!-- Sidebar -->
         <div class="admin-sidebar text-white p-3" style="width: 250px;">
-            <h4 class="text-center mb-4 d-flex align-items-center justify-content-center"><img
-                    src="images/fav-icon-cine-catalogo.png" alt="Ícono"
-                    style="height: 24px; width: 24px; margin-right: 8px;">CineCatálogo</h4>
+            <h4 class="text-center mb-4 d-flex align-items-center justify-content-center">
+                <i class="bi bi-camera-reels me-2"></i> CineCatálogo
+            </h4>
             <ul class="nav flex-column">
                 <li class="nav-item">
                     <a class="nav-link text-white {{ request()->routeIs('movies.index') ? 'active' : '' }}"

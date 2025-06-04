@@ -2,13 +2,14 @@
 <html lang="es">
 
 <head>
-    <title>Inicio</title>
+    <title>Iniciar sesión – CineCatálogo</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="{{ asset('css/login/bootstrap.min.css') }}">
 
     
-    <link href="{{ asset('images/fav-icon-cine-catalogo.png') }}" rel="icon">
+    <link href="{{ asset('images/fav-icon-cine-catalogo.ico') }}" rel="icon" type="image/x-icon">
+
     <!-- libreria -->
     <link href="{{ asset('plugins/fontawesome-free/css/all.min.css') }}" type="text/css" rel="stylesheet" />
 
@@ -26,7 +27,7 @@
         }
         body {
             font-family: 'Roboto', sans-serif;
-            background-image: url({{ asset('images/fondo-cine.jpg') }});
+            background-image: url({{ asset('images/cine-catalogo-login.jpg') }});
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;

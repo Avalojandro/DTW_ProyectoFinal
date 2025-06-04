@@ -12,7 +12,7 @@
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 
-    <link href="{{ asset('images/fav-icon-cine-catalogo.png') }}" rel="icon">
+    <link href="{{ asset('images/fav-icon-cine-catalogo.ico') }}" rel="icon" type="image/x-icon">
 
     @stack('styles')
 
@@ -108,16 +108,28 @@
             z-index: 1100;
             min-width: 300px;
         }
+
+        .search-btn {
+            transform: none !important;
+            background-color: transparent !important;
+            color: white !important;
+            transition: background-color 0.3s ease, color 0.3s ease !important;
+        }
+
+        .search-btn:hover {
+            background-color: #007bff !important;
+            color: white !important;
+        }
     </style>
 </head>
 <body>
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
         <div class="container">
-            <a class="navbar-brand d-flex align-items-center" href="{{ url('/') }}">
+            <span class="navbar-brand d-flex align-items-center">
                 <i class="bi bi-camera-reels me-2"></i>
                 CineCatálogo
-            </a>
+            </span>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
                 <span class="navbar-toggler-icon"></span>
@@ -126,9 +138,8 @@
             <div class="collapse navbar-collapse" id="mainNavbar">
                 <form class="d-flex ms-auto" action="{{ route('movies.index') }}" method="GET">
                     <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Buscar películas..."
-                            name="search" value="{{ request('search') }}">
-                        <button class="btn btn-outline-light" type="submit">
+                        <input type="text" class="form-control" placeholder="Buscar películas..." name="search" value="{{ request('search') }}" style="box-shadow: none !important">
+                        <button class="btn btn-outline-light search-btn" type="submit">
                             <i class="bi bi-search"></i>
                         </button>
                     </div>
@@ -163,14 +174,29 @@
     <footer>
         <div class="container">
             <div class="row">
-                <div class="col-md-8">
+                <div class="col-12 col-md-5 mb-4 text-center text-md-start">
                     <h5><i class="bi bi-camera-reels me-2"></i>CineCatálogo</h5>
-                    <p>Tu catálogo personal de películas favoritas.</p>
+                    <p>Tu catálogo personal de películas y series favoritas.</p>
                 </div>
-                <div class="col-md-4">
+                <div class="col-12 col-md-5 text-center text-md-start ms-md-auto">
                     <h5>Contacto</h5>
                     <ul class="list-unstyled">
-                        <li><i class="bi bi-envelope me-2"></i> contacto@cinecatalogo.com</li>
+                        <li class="mb-2">
+                            <i class="bi bi-telephone me-2"></i> +503 2200 9000
+                        </li>
+                        <li class="mb-2">
+                            <i class="bi bi-envelope me-2"></i> contacto@cinecatalogo.com
+                        </li>
+                        <li class="mt-3">
+                            <h6>Síguenos en redes:</h6>
+                            <div class="social-icons mt-2 text-white d-flex justify-content-center justify-content-md-start" style="font-size: 1.5rem;">
+                                <i class="bi bi-facebook me-3" aria-label="Facebook"></i>
+                                <i class="bi bi-twitter-x me-3" aria-label="Twitter"></i>
+                                <i class="bi bi-instagram me-3" aria-label="Instagram"></i>
+                                <i class="bi bi-youtube me-3" aria-label="YouTube"></i>
+                                <i class="bi bi-tiktok" aria-label="TikTok"></i>
+                            </div>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -184,7 +210,7 @@
     <!-- Bootstrap JS Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
-    <!-- Custom Scripts (SIMPLIFICADO) -->
+    <!-- Custom Scripts -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             // Auto-ocultar notificaciones
