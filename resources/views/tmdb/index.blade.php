@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container">
-        <h1 class="mb-4">Catálogo Mundial (TMDB)</h1>
+        <h1 class="mb-4">Catálogo Mundial (TMDB API)</h1>
         <div id="tmdb-list" class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
             <!-- Las películas se insertarán aquí -->
         </div>
