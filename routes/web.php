@@ -10,6 +10,7 @@ use App\Http\Controllers\Backend\Configuracion\ConfiguracionController;
 use App\Http\Controllers\Backend\Registro\RegistroController;
 use App\Http\Controllers\Backend\Dashboard\DashboardController;
 use App\Http\Controllers\Controles\MovieController;
+use App\Http\Controllers\Controles\TmdbController;
 
 // Ruta de bienvenida/página principal
 Route::get('/', function () {
@@ -20,12 +21,14 @@ Route::get('/', function () {
 Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::post('/admin/login', [LoginController::class, 'login']);
 Route::post('/admin/logout', [LoginController::class, 'logout'])->name('admin.logout');
-
 //ruta de logout arreglada
 Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 
 // Rutas protegidas (requieren autenticación) - Resto de rutas administrativas
 Route::middleware(['auth'])->group(function () {
+
+
+    Route::get('/tmdb', [TmdbController::class, 'index'])->name('tmdb.index');
 
     // Panel de control principal
     //Route::get('/panel', [ControlController::class, 'indexRedireccionamiento'])->name('admin.panel');
@@ -39,7 +42,6 @@ Route::middleware(['auth'])->group(function () {
         Route::put('/{id}', [MovieController::class, 'update'])->name('movies.update');
         Route::delete('/{id}', [MovieController::class, 'destroy'])->name('movies.destroy');
     });
-
 
     // Dashboard administrativo
     Route::get('/admin/dashboard', [DashboardController::class, 'vistaDashboard'])->name('admin.dashboard.index');
