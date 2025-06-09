@@ -1,6 +1,7 @@
 @extends('backend.layouts.admin')
 
 @section('title', $movie->title)
+
 @section('content')
 <div class="container py-5">
     <div class="d-flex justify-content-between align-items-center mb-4">
@@ -22,8 +23,7 @@
             <form action="{{ route('movies.destroy', $movie->id) }}" method="POST" class="d-inline">
                 @csrf
                 @method('DELETE')
-                <button type="submit" class="btn btn-danger"
-                        onclick="return confirm('¿Estás seguro de eliminar esta película?')">
+                <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#modalEliminar">
                     <i class="bi bi-trash me-1"></i> Eliminar
                 </button>
             </form>
@@ -197,4 +197,38 @@
         transform: scale(1.02);
     }
 </style>
+
+<div class="modal fade" id="modalEliminar" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content border-0 shadow-lg rounded-4">
+            <div class="modal-header bg-danger text-white rounded-top-4">
+                <h5 class="modal-title fw-semibold" id="deleteModalLabel">
+                    <i class="bi bi-trash3-fill me-2"></i> Confirmar eliminación
+                </h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+            </div>
+            <div class="modal-body px-4 pt-4 pb-0">
+                <div class="d-flex align-items-start">
+                    <i class="bi bi-exclamation-triangle-fill text-danger fs-1 me-3"></i>
+                    <p class="mb-0 fs-5 lh-sm">
+                        ¿Está seguro de que desea eliminar la película <strong>"{{ $movie->title }}"</strong>?<br>
+                        Esta acción no se puede deshacer.
+                    </p>
+                </div>
+            </div>
+            <div class="modal-footer border-0 px-4 pb-4 pt-3">
+                <button type="button" class="btn btn-outline-secondary rounded-pill px-4" data-bs-dismiss="modal">
+                    <i class="bi bi-x-circle me-1"></i> Cancelar
+                </button>
+                <form id="formularioEliminar" action="{{ route('movies.destroy', $movie->id) }}" method="POST" class="d-inline">
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit" class="btn btn-danger rounded-pill px-4">
+                        <i class="bi bi-trash-fill me-1"></i> Sí, eliminar
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
 @endsection

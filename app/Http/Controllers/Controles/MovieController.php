@@ -88,15 +88,8 @@ class MovieController extends Controller
 
         $movie = Movie::create($data);
 
-        // Efecto especial si se marca como vista al crear
-        if ($movie->status == 'watched') {
-            return redirect()->route('movies.show', $movie->id)
-                ->with('success', 'Película creada exitosamente!')
-                ->with('show_applause', true);
-        }
-
         return redirect()->route('movies.index')
-            ->with('success', 'Película creada exitosamente!');
+            ->with('success', '¡Película creada exitosamente!');
     }
 
     public function show($id)
@@ -176,15 +169,8 @@ class MovieController extends Controller
 
             $movie->update($data);
 
-            // Efecto especial si se marca como vista
-            if ($movie->status == 'watched') {
-                return redirect()->route('movies.show', $movie->id)
-                    ->with('success', 'Película actualizada correctamente!')
-                    ->with('show_applause', true);
-            }
-
             return redirect()->route('movies.show', $movie->id)
-                ->with('success', 'Película actualizada correctamente!');
+                ->with('success', '¡Película actualizada correctamente!');
 
         } catch (\Exception $e) {
             return redirect()->back()
@@ -206,7 +192,7 @@ class MovieController extends Controller
             $movie->delete();
 
             return redirect()->route('movies.index')
-                ->with('success', 'Película eliminada exitosamente!');
+                ->with('success', '¡Película eliminada exitosamente!');
         } catch (\Exception $e) {
             return redirect()->route('movies.index')
                 ->with('error', 'Error al eliminar la película: '.$e->getMessage());

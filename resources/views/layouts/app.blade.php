@@ -126,10 +126,10 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
         <div class="container">
-            <span class="navbar-brand d-flex align-items-center">
+            <a class="navbar-brand d-flex align-items-center" href="{{ url('/') }}">
                 <i class="bi bi-camera-reels me-2"></i>
                 CineCatálogo
-            </span>
+            </a>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
                 <span class="navbar-toggler-icon"></span>
@@ -151,21 +151,6 @@
     <!-- Main Content -->
     <main>
         <div class="container">
-            <!-- Notificaciones -->
-            @if(session('success'))
-                <div class="alert alert-success alert-dismissible fade show alert-notification" role="alert">
-                    <i class="bi bi-check-circle-fill me-2"></i> {{ session('success') }}
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                </div>
-            @endif
-
-            @if(session('error'))
-                <div class="alert alert-danger alert-dismissible fade show alert-notification" role="alert">
-                    <i class="bi bi-exclamation-triangle-fill me-2"></i> {{ session('error') }}
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                </div>
-            @endif
-
             @yield('content')
         </div>
     </main>
@@ -188,7 +173,6 @@
                             <i class="bi bi-envelope me-2"></i> contacto@cinecatalogo.com
                         </li>
                         <li class="mt-3">
-                            <h6>Síguenos en redes:</h6>
                             <div class="social-icons mt-2 text-white d-flex justify-content-center justify-content-md-start" style="font-size: 1.5rem;">
                                 <i class="bi bi-facebook me-3" aria-label="Facebook"></i>
                                 <i class="bi bi-twitter-x me-3" aria-label="Twitter"></i>
@@ -207,35 +191,7 @@
         </div>
     </footer>
 
-    <!-- Bootstrap JS Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Custom Scripts -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Auto-ocultar notificaciones
-            setTimeout(() => {
-                const alerts = document.querySelectorAll('.alert-notification');
-                alerts.forEach(alert => {
-                    new bootstrap.Alert(alert).close();
-                });
-            }, 5000);
-
-            // Confirmación antes de eliminar
-            document.querySelectorAll('form[action*="destroy"]').forEach(form => {
-                form.addEventListener('submit', function(e) {
-                    if (!confirm('¿Estás seguro de eliminar este registro?')) {
-                        e.preventDefault();
-                    }
-                });
-            });
-
-            // Tooltips
-            [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
-                .forEach(el => new bootstrap.Tooltip(el));
-        });
-    </script>
-
     @stack('scripts')
+    
 </body>
 </html>

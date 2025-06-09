@@ -12,6 +12,7 @@
     <link href="https://fonts.googleapis.com/css?family=Muli:400" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Passion+One" rel="stylesheet">
     <link href="{{ asset('css/adminlte.min.css') }}" type="text/css" rel="stylesheet" />
+    <link href="{{ asset('images/fav-icon-cine-catalogo.ico') }}" rel="icon" type="image/x-icon">
 </head>
 
 <body>
@@ -21,7 +22,7 @@
         <div class="notfound-404">
             <h1>419</h1>
         </div>
-        <h2 style="font-family: 'Arial Black'">Su Sesión Expiro. Por favor iniciar sesión nuevamente!</h2>
+        <h2 style="font-family: 'Arial Black'">Su sesión expiró. Por favor, inicie sesión nuevamente.</h2>
         <button type="button" onclick="redireccionar()" class="btn btn-primary btn-sm">
             INICIAR SESIÓN
         </button>
@@ -31,11 +32,9 @@
 </html>
 
 <script>
-
     function redireccionar(){
         window.location.href="{{ url('/') }}";
     }
-
 </script>
 
 <style>
@@ -45,22 +44,29 @@
         box-sizing: border-box;
     }
 
-    body {
-        padding: 0;
+    html, body {
+        height: 100%;
         margin: 0;
+        padding: 0;
+    }
+
+    html {
+        scroll-behavior: smooth;
     }
 
     #notfound {
         position: relative;
-        height: 100vh;
+        min-height: 100vh;
+        width: 100%;
     }
 
     #notfound .notfound-bg {
         position: absolute;
         width: 100%;
         height: 100%;
-        background-image: url({{ asset('/images/fondo3.jpg') }});
+        background-color: #d9534f;
         background-size: cover;
+        background-position: center;
     }
 
     #notfound .notfound-bg:after {
@@ -89,7 +95,7 @@
         -ms-transform: translate(-50% , -50%);
         transform: translate(-50% , -50%);
         width: 100%;
-        height: 600px;
+        min-height: 100%;
         background-color: rgba(255, 255, 255, 0.7);
         -webkit-box-shadow: 0px 0px 0px 30px rgba(255, 255, 255, 0.7) inset;
         box-shadow: 0px 0px 0px 30px rgba(255, 255, 255, 0.7) inset;
@@ -117,7 +123,7 @@
         -webkit-transform: translate(-50%, -50%);
         -ms-transform: translate(-50%, -50%);
         transform: translate(-50%, -50%);
-        font-size: 180px;
+        font-size: clamp(100px, 25vw, 180px);
         margin: 0px;
         color: #222225;
         text-transform: uppercase;
@@ -125,7 +131,7 @@
 
     .notfound h2 {
         font-family: 'Muli', sans-serif;
-        font-size: 26px;
+        font-size: clamp(18px, 5vw, 26px);
         font-weight: 400;
         text-transform: uppercase;
         color: #222225;
@@ -208,11 +214,11 @@
         }
 
         .notfound .notfound-404 h1 {
-            font-size: 146px;
+            font-size: 120px;
         }
 
         .notfound h2 {
-            font-size: 22px;
+            font-size: 20px;
         }
     }
 
