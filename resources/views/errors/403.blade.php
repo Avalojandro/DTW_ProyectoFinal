@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Página no encontrada</title>
+    <title>Acceso denegado - 403</title>
 
     <!-- Google font -->
     <link href="https://fonts.googleapis.com/css?family=Muli:400" rel="stylesheet">
@@ -23,7 +23,7 @@
         <div class="notfound-404">
             <h1>403</h1>
         </div>
-        <h2 style="font-family: 'Arial Black'">No Tienes Permisos Para Ver Esta Página!</h2>
+        <h2 style="font-family: 'Arial Black'">¡No Tienes Permisos Para Ver Esta Página!</h2>
     </div>
 </div>
 </body>
@@ -87,7 +87,7 @@
         -ms-transform: translate(-50% , -50%);
         transform: translate(-50% , -50%);
         width: 100%;
-        min-height: 100%; /* cambio aquí para que sea responsivo */
+        min-height: 100%;
         background-color: rgba(255, 255, 255, 0.7);
         -webkit-box-shadow: 0px 0px 0px 30px rgba(255, 255, 255, 0.7) inset;
         box-shadow: 0px 0px 0px 30px rgba(255, 255, 255, 0.7) inset;
@@ -115,7 +115,7 @@
         -webkit-transform: translate(-50%, -50%);
         -ms-transform: translate(-50%, -50%);
         transform: translate(-50%, -50%);
-        font-size: clamp(100px, 25vw, 180px); /* responsivo */
+        font-size: clamp(100px, 25vw, 180px);
         margin: 0px;
         color: #222225;
         text-transform: uppercase;
@@ -123,7 +123,7 @@
 
     .notfound h2 {
         font-family: 'Muli', sans-serif;
-        font-size: clamp(18px, 5vw, 26px); /* responsivo */
+        font-size: clamp(18px, 5vw, 26px);
         font-weight: 400;
         text-transform: uppercase;
         color: #222225;

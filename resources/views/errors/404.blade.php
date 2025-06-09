@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Página no encontrada</title>
+    <title>Página no encontrada - 404</title>
 
     <!-- Google font -->
     <link href="https://fonts.googleapis.com/css?family=Muli:400" rel="stylesheet">
@@ -23,7 +23,7 @@
         <div class="notfound-404">
             <h1>404</h1>
         </div>
-        <h2 style="font-family: 'Arial Black'">Ops.. Página no encontrada!</h2>
+        <h2 style="font-family: 'Arial Black'">¡Ops... Página no encontrada!</h2>
     </div>
 </div>
 </body>
@@ -83,7 +83,7 @@
         -ms-transform: translate(-50% , -50%);
         transform: translate(-50% , -50%);
         width: 100%;
-        min-height: 100%; /* en lugar de height: 600px */
+        min-height: 100%;
         background-color: rgba(255, 255, 255, 0.7);
         -webkit-box-shadow: 0px 0px 0px 30px rgba(255, 255, 255, 0.7) inset;
         box-shadow: 0px 0px 0px 30px rgba(255, 255, 255, 0.7) inset;

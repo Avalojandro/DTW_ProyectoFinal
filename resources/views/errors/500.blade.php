@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Página no encontrada</title>
+    <title>Error interno - 500</title>
 
     <!-- Google font -->
     <link href="https://fonts.googleapis.com/css?family=Muli:400" rel="stylesheet">
@@ -23,7 +23,7 @@
         <div class="notfound-404">
             <h1>500</h1>
         </div>
-        <h2 style="font-family: 'Arial Black'">Ops.. Error Interno!</h2>
+        <h2 style="font-family: 'Arial Black'">¡Ops... Error interno!</h2>
     </div>
 </div>
 </body>
