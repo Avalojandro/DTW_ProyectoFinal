@@ -22,6 +22,10 @@ Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::post('/admin/login', [LoginController::class, 'login']);
 Route::post('/admin/logout', [LoginController::class, 'logout'])->name('admin.logout');
 
+//ruta de logout arreglada
+Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
+
+
 // Rutas protegidas (requieren autenticación) - Resto de rutas administrativas
 Route::middleware(['auth'])->group(function () {
 
