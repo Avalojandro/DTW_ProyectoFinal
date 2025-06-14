@@ -1,4 +1,4 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="es">
 
 <head>
@@ -10,9 +10,10 @@
     <link href="{{ asset('images/fav-icon-cine-catalogo.ico') }}" rel="icon" type="image/x-icon">
 
     @stack('styles')
-    
+
     <style>
-        html, body {
+        html,
+        body {
             height: 100%;
             margin: 0;
         }
@@ -62,7 +63,8 @@
     <div class="main-wrapper">
         <div class="admin-sidebar p-3">
             <h4 class="text-center mb-4">
-                <a href="{{ route('movies.index') }}" class="d-flex align-items-center justify-content-center text-decoration-none text-white">
+                <a href="{{ route('movies.index') }}"
+                    class="d-flex align-items-center justify-content-center text-decoration-none text-white">
                     <i class="bi bi-camera-reels me-2"></i> CineCatálogo
                 </a>
             </h4>
@@ -88,18 +90,27 @@
                         </a>
                     </li>
                 @endcan
+                @can('agregar-pelicula')
+                    <li class="nav-item">
+                        <a class=" text-nowrap nav-link text-white {{ request()->routeIs('admin.dashboard.index') ? 'active' : '' }}"
+                            href="{{ route('admin.dashboard.index') }}">
+                            <i class="bi bi-plus-circle me-2 text-nowrap"></i>
+                            Panel de administración
+                        </a>
+                    </li>
+                @endcan
             </ul>
 
             <div class="mt-auto pt-3">
-                <a href="{{ route('admin.logout') }}" 
-                   onclick="event.preventDefault(); document.getElementById('sidebar-logout-form').submit();"
-                   class="btn btn-danger d-flex align-items-center justify-content-center"
-                   style="width: 45px; height: 45px; border-radius: 8px;"
-                   title="Cerrar sesión">
+                <a href="{{ route('admin.logout') }}"
+                    onclick="event.preventDefault(); document.getElementById('sidebar-logout-form').submit();"
+                    class="btn btn-danger d-flex align-items-center justify-content-center"
+                    style="width: 45px; height: 45px; border-radius: 8px;" title="Cerrar sesión">
                     <i class="bi bi-box-arrow-right"></i>
                 </a>
 
-                <form id="sidebar-logout-form" action="{{ route('admin.logout') }}" method="POST" style="display: none;">
+                <form id="sidebar-logout-form" action="{{ route('admin.logout') }}" method="POST"
+                    style="display: none;">
                     @csrf
                 </form>
             </div>
