@@ -568,6 +568,7 @@ class ComposerStaticInit70bd846f7648b40fbf423a1f72f49636
         'App\\Http\\Controllers\\Backend\\Roles\\RolesController' => __DIR__ . '/../..' . '/app/Http/Controllers/Backend/Roles/RolesController.php',
         'App\\Http\\Controllers\\Controles\\ControlController' => __DIR__ . '/../..' . '/app/Http/Controllers/Controles/ControlController.php',
         'App\\Http\\Controllers\\Controles\\MovieController' => __DIR__ . '/../..' . '/app/Http/Controllers/Controles/MovieController.php',
+        'App\\Http\\Controllers\\Controles\\TmdbController' => __DIR__ . '/../..' . '/app/Http/Controllers/Controles/TmdbController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Controllers\\Frontend\\Login\\LoginController' => __DIR__ . '/../..' . '/app/Http/Controllers/Frontend/Login/LoginController.php',
         'App\\Http\\Controllers\\Frontend\\PrincipalController' => __DIR__ . '/../..' . '/app/Http/Controllers/Frontend/PrincipalController.php',

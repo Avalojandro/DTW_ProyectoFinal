@@ -14,6 +14,7 @@ return array(
     'App\\Http\\Controllers\\Backend\\Roles\\RolesController' => $baseDir . '/app/Http/Controllers/Backend/Roles/RolesController.php',
     'App\\Http\\Controllers\\Controles\\ControlController' => $baseDir . '/app/Http/Controllers/Controles/ControlController.php',
     'App\\Http\\Controllers\\Controles\\MovieController' => $baseDir . '/app/Http/Controllers/Controles/MovieController.php',
+    'App\\Http\\Controllers\\Controles\\TmdbController' => $baseDir . '/app/Http/Controllers/Controles/TmdbController.php',
     'App\\Http\\Controllers\\Controller' => $baseDir . '/app/Http/Controllers/Controller.php',
     'App\\Http\\Controllers\\Frontend\\Login\\LoginController' => $baseDir . '/app/Http/Controllers/Frontend/Login/LoginController.php',
     'App\\Http\\Controllers\\Frontend\\PrincipalController' => $baseDir . '/app/Http/Controllers/Frontend/PrincipalController.php',
