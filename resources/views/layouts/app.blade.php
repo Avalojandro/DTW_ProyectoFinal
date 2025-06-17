@@ -232,6 +232,7 @@
             min-width: 300px;
         }
     </style>
+    @vite('resources/js/app.js')
 </head>
 <body>
     <!-- Efectos de Cine Mejorados -->

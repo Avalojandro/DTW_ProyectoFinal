@@ -5,6 +5,7 @@
 <div class="container py-4">
     <div class="d-flex justify-content-between align-items-center mb-4">
         <h1 class="mb-0">Catálogo de Películas</h1>
+        <button id="btn-prueba" class="btn btn-success ms-3">Botón JS</button>
         <div class="d-flex gap-2">
             <a href="{{ route('welcome') }}" class="btn btn-outline-secondary">
                 <i class="bi bi-house-door me-1"></i> Volver al Inicio
@@ -177,5 +178,9 @@
         overflow: hidden;
         text-overflow: ellipsis;
     }
+
+
 </style>
+
 @endsection
+

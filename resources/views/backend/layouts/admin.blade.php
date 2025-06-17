@@ -73,5 +73,10 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     @stack('scripts')
+
+    @yield('scripts')
 </body>
 </html>
+@section('scripts')
+  <script src="{{ asset('js/eventos.js') }}"></script>
+@endsection
