@@ -94,7 +94,7 @@
                     <li class="nav-item">
                         <a class=" text-nowrap nav-link text-white {{ request()->routeIs('admin.dashboard.index') ? 'active' : '' }}"
                             href="{{ route('admin.dashboard.index') }}">
-                            <i class="bi bi-plus-circle me-2 text-nowrap"></i>
+                            <i class="bi bi-shield-lock me-2 text-nowrap"></i>
                             Panel de administración
                         </a>
                     </li>

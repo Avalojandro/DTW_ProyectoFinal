@@ -53,15 +53,14 @@
 
         main {
             flex: 1;
-            padding-top: 2rem;
-            padding-bottom: 2rem;
+            padding-top: 3rem;
+            padding-bottom: 0.5rem;
         }
 
         footer {
             background-color: var(--dark-color);
             color: white;
             padding: 2rem 0;
-            margin-top: 3rem;
         }
 
         .movie-card {
@@ -126,7 +125,7 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
         <div class="container">
-            <a class="navbar-brand d-flex align-items-center" href="{{ url('/') }}">
+            <a class="navbar-brand d-flex align-items-center" href="{{ route('movies.index') }}">
                 <i class="bi bi-camera-reels me-2"></i>
                 CineCatálogo
             </a>
@@ -171,15 +170,6 @@
                         </li>
                         <li class="mb-2">
                             <i class="bi bi-envelope me-2"></i> contacto@cinecatalogo.com
-                        </li>
-                        <li class="mt-3">
-                            <div class="social-icons mt-2 text-white d-flex justify-content-center justify-content-md-start" style="font-size: 1.5rem;">
-                                <i class="bi bi-facebook me-3" aria-label="Facebook"></i>
-                                <i class="bi bi-twitter-x me-3" aria-label="Twitter"></i>
-                                <i class="bi bi-instagram me-3" aria-label="Instagram"></i>
-                                <i class="bi bi-youtube me-3" aria-label="YouTube"></i>
-                                <i class="bi bi-tiktok" aria-label="TikTok"></i>
-                            </div>
                         </li>
                     </ul>
                 </div>

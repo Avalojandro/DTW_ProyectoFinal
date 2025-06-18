@@ -23,6 +23,11 @@
     <div class="container-fluid">
         <div class="col-sm-12">
             <h1>Lista de Permisos</h1>
+            <a href="{{ route('admin.roles.index') }}" 
+                class="btn btn-primary rounded-pill px-4 fw-bold fs-6" 
+                style="padding: 10px 25px;">
+                    Atrás
+            </a>
         </div>
         <br>
         <button type="button" style="font-weight: bold; background-color: #28a745; color: white !important;" onclick="modalAgregar()" class="button button-3d button-rounded button-pill button-small">

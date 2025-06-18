@@ -20,8 +20,13 @@
 <div id="divcontenedor" style="display: none">
     <section class="content-header">
         <div class="container-fluid">
-            <div class="col-sm-12">
+            <div class="col-sm-12 d-flex justify-content-between align-items-center">
                 <h1>Permisos Usuarios</h1>
+                <a href="{{ route('admin.dashboard.index') }}" 
+                class="btn btn-primary rounded-pill px-4 fw-bold fs-6" 
+                style="padding: 10px 25px;">
+                    Atrás
+                </a>
             </div>
             <br>
             <button type="button" style="font-weight: bold; background-color: #28a745; color: white !important;" onclick="modalAgregar()" class="button button-3d button-rounded button-pill button-small">

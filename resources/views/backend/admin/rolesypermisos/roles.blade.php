@@ -17,8 +17,13 @@
 <div id="divcontenedor" style="display: none">
     <section class="content-header">
         <div class="container-fluid">
-            <div class="col-sm-12">
+            <div class="col-sm-12 d-flex justify-content-between align-items-center">
                 <h1>Rol y Permisos</h1>
+                <a href="{{ route('admin.dashboard.index') }}" 
+                class="btn btn-primary rounded-pill px-4 fw-bold fs-6" 
+                style="padding: 10px 25px;">
+                    Atrás
+                </a>
             </div>
             <br>
 
@@ -32,7 +37,7 @@
                 Lista de Permisos
             </button>
 
-           <!-- <button type="button" style="font-weight: bold; background-color: #28a745; color: white !important;" value="Actualizar" onclick="actualizarTabla()" class="button button-3d button-rounded button-pill button-small">
+        <!-- <button type="button" style="font-weight: bold; background-color: #28a745; color: white !important;" value="Actualizar" onclick="actualizarTabla()" class="button button-3d button-rounded button-pill button-small">
                 <i class="fas fa-list-alt"></i>
                 Actualizar Tabla
             </button>-->
