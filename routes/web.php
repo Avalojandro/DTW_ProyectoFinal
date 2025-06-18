@@ -102,3 +102,8 @@ Route::prefix('api')->group(function () {
 Route::fallback(function () {
     return response()->view('errors.404', [], 404);
 });
+
+// Ruta de eventos
+Route::get('/eventos', function () {                           
+    return view('eventos');
+});
