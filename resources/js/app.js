@@ -2,9 +2,7 @@ import './bootstrap';
 // app.js
 import './eventos';
 
-
-// resources/js/app.js
-
+//el codigo fue agregado en el archivo welcome blade
 // evento click botton
 document.addEventListener("DOMContentLoaded", function () {
     const boton = document.getElementById("miBoton");
