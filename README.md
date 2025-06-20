@@ -38,7 +38,7 @@ Sigue estos pasos para poner en marcha el proyecto en tu entorno local:
 
 ```bash
 git clone <url-del-repositorio>
-cd <Parcial-3>
+cd <DTW_ProyectoFinal>
 ```
 
 ### 2️⃣ Instalar dependencias
